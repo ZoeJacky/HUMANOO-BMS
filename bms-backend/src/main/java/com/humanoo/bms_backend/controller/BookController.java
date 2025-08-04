@@ -29,7 +29,8 @@ public class BookController {
     }
 
     @GetMapping
-    public ResponseEntity<List<BookDto>> getAllBooks(){
+    public ResponseEntity<List<BookDto>> getAllBooks() throws InterruptedException {
+//        Thread.sleep(2000); //mimic network latency
         List<BookDto> books = bookService.getAllBooks();
         return ResponseEntity.ok(books);
     }
