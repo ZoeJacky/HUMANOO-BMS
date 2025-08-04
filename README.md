@@ -1,8 +1,3 @@
-Sure! Here's a **simplified and clean `README.md` file**, suitable for quick reference and GitHub display, while still meeting the case study requirements:
-
----
-
-````md
 # 📚 Book Management System (BMS)
 
 A full-stack web app for managing a collection of books, built with **Spring Boot** (Java) and **React + Vite**. It supports full CRUD operations and is styled with **Bootstrap**.
