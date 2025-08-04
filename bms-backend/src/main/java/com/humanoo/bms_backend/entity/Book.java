@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -27,5 +29,5 @@ public class Book {
     private String isbn;
 
     @Column(name = "price")
-    private Float price;
+    private BigDecimal price;
 }

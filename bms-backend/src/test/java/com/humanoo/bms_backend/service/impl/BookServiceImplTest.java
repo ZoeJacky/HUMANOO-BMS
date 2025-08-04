@@ -1,6 +1,7 @@
 package com.humanoo.bms_backend.service.impl;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 import org.json.JSONException;
@@ -87,7 +88,7 @@ class BookServiceImplTest {
         when(bookRepository.save(any(Book.class))).thenReturn(testBook);
 
         // Act
-        BookDto updated = new BookDto(testBook.getId(), "Updated Title", "Author", "123", 10.0f);
+        BookDto updated = new BookDto(testBook.getId(), "Updated Title", "Author", "123", new BigDecimal("10.0"));
         BookDto result = bookService.updateBook(1L, updated);
 
         // Assert
