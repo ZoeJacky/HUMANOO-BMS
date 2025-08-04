@@ -13,15 +13,6 @@ const ListBookComponent = () => {
         getAllBooks();
     },[])
 
-    // function getAllBooks(){
-    //     listBooks().then((response)=>{
-    //         setBooks(response.data);
-    //     }).catch(error=>{
-    //         console.error(error);
-    //     })
-    // }
-
-    // Using async/await for fetching books
     const getAllBooks = async () => {
         try {
             setLoading(true);
@@ -44,33 +35,20 @@ const ListBookComponent = () => {
         navigator(`/edit-book/${id}`)
     }
 
-    // function removeBook(id){
-    //     console.log(id);
-
-    //     deleteBook(id).then((response) => {
-    //         getAllBooks(); 
-    //     }).catch((error) => {
-    //         console.error(error);
-    //     })
-    // }
-
-    // Using async/await for delete operation
     const removeBook = async (id) => {
         try {
             await deleteBook(id);
-            await getAllBooks(); // Refresh book list
+            await getAllBooks(); 
         } catch (err) {
             console.error('Error deleting book:', err);
             alert('Failed to delete the book.');
         }
     };
 
-    // Loading state
     if (loading) {
         return <div className="container mt-3">Loading books...</div>;
     }
 
-    // Error state
     if (error) {
         return <div className="container mt-3 text-danger">{error}</div>;
     }
